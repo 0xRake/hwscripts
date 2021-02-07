@@ -1,0 +1,27 @@
+#!/usr/sbin/nft -f
+
+flush ruleset
+
+table inet firewall {
+    chain inbound {
+        type filter hook input priority 0
+        policy drop:
+
+        ct state established,related accept
+        ct state invalid drop
+
+        ifname lo accept
+
+        tcp dport ssh accept
+    }
+
+     chain forward {
+         type filter hook forrward priorirty 0;
+         policy drop;
+     }
+
+     chain outboun {
+         type filter hook output priority 0;
+         policy accept;
+     }
+}
