@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+sudo apt -y install build-essential git make autoconf automake neovim vim python3-pip python3-setuptools whois dnsutils net-tools inetutils-tools man-db htop pv fzf bash bash-completion 
+git git-extras neovim nano htop httpie curl wget apt-utils file \
+dialog menu ncurses-term aptitude aptitude-common aptitude-doc-en apt-xapian-index \ 
+xapian-tools exuberant-ctags libtool binutils pkg-config nnn pv xz-utils && \
+sudo apt update && \
+sudo apt -y upgrade
